@@ -30,3 +30,25 @@ if (!$review) {
     exit;
 }
 ?>
+
+<h2>Edit Review</h2>
+
+<!-- form pre-filled with the existing values -->
+<form method="POST" action="update.php">
+    <!-- keep track of which review we're updating -->
+    <input type="hidden" name="id" value="<?php echo $review['id']; ?>">
+    
+    <label>Title:</label><br>
+    <input type="text" name="title" value="<?php echo htmlspecialchars($review['title']); ?>"><br><br>
+
+    <label>Author:</label><br>
+    <input type="text" name="author" value="<?php echo htmlspecialchars($review['author']); ?>"><br><br>
+
+    <label>Rating:</label><br>
+    <input type="number" name="rating" value="<?php echo $review['rating']; ?>"><br><br>
+
+    <label>Review:</label><br>
+    <textarea name="review" required><?php echo htmlspecialchars($review['review_text']); ?></textarea><br><br>
+
+    <button type="submit">Save Changes</button>
+</form>
