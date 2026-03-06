@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':author', $author);
         $stmt->bindParam(':rating', $rating);
         $stmt->bindParam(':review_text', $review);
-        $stmt->bindParam(':id', $id,);
+        $stmt->bindParam(':id', $id);
 
         // try to run it
         if ($stmt->execute()) {
